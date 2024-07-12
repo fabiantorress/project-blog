@@ -59,6 +59,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  flex-direction: row-reverse;
   align-items: center;
   gap: 8px;
   /* background: var(--color-gray-100); */

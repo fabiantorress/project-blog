@@ -7,7 +7,7 @@ import Card from "@/components/Card";
 import VisuallyHidden from "@/components/VisuallyHidden";
 
 import styles from "./CircularColorsDemo.module.css";
-import { motion, MotionConfig } from "framer-motion";
+import { motion } from "framer-motion";
 
 const COLORS = [
   { label: "red", value: "hsl(348deg 100% 60%)" },
@@ -36,7 +36,6 @@ function CircularColorsDemo() {
   const selectedColor = COLORS[timeElapsed % COLORS.length];
 
   return (
-    <MotionConfig reducedMotion="user">
       <Card as="section" className={styles.wrapper}>
         <ul className={styles.colorsWrapper}>
           {COLORS.map((color, index) => {
@@ -98,7 +97,6 @@ function CircularColorsDemo() {
           </div>
         </div>
       </Card>
-    </MotionConfig>
   );
 }
 

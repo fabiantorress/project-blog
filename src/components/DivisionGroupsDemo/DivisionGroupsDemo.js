@@ -8,7 +8,7 @@ import SliderControl from "@/components/SliderControl";
 
 import Equation from "./Equation";
 import styles from "./DivisionGroupsDemo.module.css";
-import { motion, MotionConfig, LayoutGroup } from "framer-motion";
+import { motion, LayoutGroup } from "framer-motion";
 
 function DivisionGroupsDemo({
   numOfItems = 12,
@@ -36,7 +36,6 @@ function DivisionGroupsDemo({
         };
 
   return (
-    <MotionConfig reducedMotion="user">
       <Card as="section" className={styles.wrapper}>
         <header className={styles.header}>
           <SliderControl
@@ -82,8 +81,7 @@ function DivisionGroupsDemo({
             <div className={styles.remainderArea}>
               <p className={styles.remainderHeading}>Remainder Area</p>
 
-              {range(totalItemsInGroups, totalItemsInGroups + remainder)
-                .reverse()
+              {range(totalItemsInGroups, numOfItems)
                 .map((index) => {
                   const layoutId = `${id}-${index}`;
                   return (
@@ -109,7 +107,6 @@ function DivisionGroupsDemo({
           remainder={remainder}
         />
       </Card>
-    </MotionConfig>
   );
 }
 
